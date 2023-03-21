@@ -1,11 +1,11 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className={classes.header}>
       <p>BeautyStore</p>
-      <HeaderCartButton />
+      <HeaderCartButton onClick={props.onClick} />
     </div>
   );
 };

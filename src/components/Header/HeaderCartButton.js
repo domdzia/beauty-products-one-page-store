@@ -3,7 +3,7 @@ import svg from "../../cart.svg";
 import classes from "./HeaderCartButton.module.css";
 import React from "react";
 
-const HeaderCartButton = () => {
+const HeaderCartButton = (props) => {
   return (
     <React.Fragment>
       <Button
@@ -11,6 +11,7 @@ const HeaderCartButton = () => {
         variant="secondary"
         type="button"
         size="lg"
+        onClick={props.onClick}
       >
         <img src={svg} alt="cart" className={classes.logo}></img>
         <p className={classes.number}>0</p>
