@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import ModalCart from "../Modal/ModalCart";
 import CartItems from "./CartItems";
 import classes from "./Modal.module.css";
-import { createContext, useContext } from "react";
+import { useContext } from "react";
 import CartContext from "../store/cart-context";
 
 const Cart = (props) => {
