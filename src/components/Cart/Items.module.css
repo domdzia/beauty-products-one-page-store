@@ -1,0 +1,26 @@
+.title {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.amount {
+  border: 2px solid rgb(197, 192, 192);
+  background-color: rgb(243, 242, 242);
+  width: 30px;
+  text-align: center;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.button {
+  margin-right: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 50px;
+  padding: 0;
+}

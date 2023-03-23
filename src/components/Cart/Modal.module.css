@@ -1,0 +1,14 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  gap: 1rem;
+  padding-right: 40px;
+}
