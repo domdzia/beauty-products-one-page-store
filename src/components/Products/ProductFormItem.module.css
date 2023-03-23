@@ -1,0 +1,9 @@
+.input {
+  width: 40px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.label {
+  font-weight: 500;
+}
