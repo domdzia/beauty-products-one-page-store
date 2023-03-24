@@ -1,4 +1,4 @@
-![a screenshot presenting the front page of the project website](./src/Images/scrn1.png)
+![a screenshot presenting the front page of the project website](src/Images/scrn1.png)
 
 # Beauty store
 
@@ -8,7 +8,7 @@ See [Store]().
 
 ## 💡 Technologies
 
-[![Used technologies](https://skills.thijs.gg/icons?i=react,js,html,cssmodule,bootstrap)](https://skills.thijs.gg)
+[![Used technologies](https://skills.thijs.gg/icons?i=react,js,html,css,bootstrap)](https://skills.thijs.gg)
 
 ## Install
 
