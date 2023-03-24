@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/beauty-products-one-page-store/static/css/main.5b9cc86c.css",
+    "main.js": "/beauty-products-one-page-store/static/js/main.67a63011.js",
+    "index.html": "/beauty-products-one-page-store/index.html",
+    "static/media/cart.svg": "/beauty-products-one-page-store/static/media/cart.a9e8dcd6c8d4fbc7521fa8a526ae9212.svg",
+    "main.5b9cc86c.css.map": "/beauty-products-one-page-store/static/css/main.5b9cc86c.css.map",
+    "main.67a63011.js.map": "/beauty-products-one-page-store/static/js/main.67a63011.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b9cc86c.css",
+    "static/js/main.67a63011.js"
+  ]
+}
