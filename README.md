@@ -4,7 +4,7 @@
 
 Beauty's one-page store allows adding chosen products to the cart and checking it in the cart modal.
 
-See [Store]().
+See [Store](https://domdzia.github.io/beauty-products-one-page-store/).
 
 ## 💡 Technologies
 
