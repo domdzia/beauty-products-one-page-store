@@ -3,6 +3,7 @@
 # Beauty store
 
 Beauty's one-page store allows adding chosen products to the cart and checking it in the cart modal.
+The filter doesn't work yet. 
 
 See [Store](https://domdzia.github.io/beauty-products-one-page-store/).
 
