@@ -13,13 +13,7 @@ const HeaderCartButton = (props) => {
 
   return (
     <React.Fragment>
-      <Button
-        className="w-25 p-3 d-flex justify-content-center"
-        variant="secondary"
-        type="button"
-        size="lg"
-        onClick={props.onClick}
-      >
+      <Button className={classes.button} type="button" onClick={props.onClick}>
         <img src={svg} alt="cart" className={classes.logo}></img>
         <p className={classes.number}>{sumValues}</p>
       </Button>
