@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductItem from "./ProductItem";
 import perfume from "../../Images/icons8-perfume-bottle-100.png";
 import classes from "./AvalaibleProducts.module.css";
 import Card from "../UI/Card";
+import Filter from "../Filters/Filter";
 
 const DUMMY_PRODUCTS = [
   {
@@ -25,7 +26,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: Math.random(Math.floor * 4),
-    gender: "female",
+    gender: "male",
     category: "perfume",
     img: { perfume },
     title: "Passion Fruit",
@@ -34,7 +35,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: Math.random(Math.floor * 4),
-    gender: "female",
+    gender: "male",
     category: "perfume",
     img: { perfume },
     title: "Citrus",
@@ -61,7 +62,7 @@ const DUMMY_PRODUCTS = [
   },
   {
     id: Math.random(Math.floor * 4),
-    gender: "female",
+    gender: "male",
     category: "perfume",
     img: { perfume },
     title: "Pink Heaven",
@@ -71,17 +72,58 @@ const DUMMY_PRODUCTS = [
 ];
 
 const AvalaibleProduct = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const getChoosenOption = (selectedOptions) => {
+    setSelectedOption(selectedOptions);
+  };
+
+  const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
+    return product.gender === selectedOption;
+  });
+
   return (
     <React.Fragment>
       <h2 className={classes["container-title"]}>Our Products</h2>
+      <Filter onFilterHandler={getChoosenOption} />
       <Card>
-        {DUMMY_PRODUCTS.map((item) => {
+        {selectedOption === "all" &&
+          DUMMY_PRODUCTS.map((item) => {
+            return (
+              <ProductItem
+                key={item.id}
+                img={perfume}
+                title={item.title}
+                price={item.price}
+                gender={item.gender}
+                category={item.category}
+                id={item.id}
+              />
+            );
+          })}
+        {!selectedOption &&
+          DUMMY_PRODUCTS.map((item) => {
+            return (
+              <ProductItem
+                key={item.id}
+                img={perfume}
+                title={item.title}
+                price={item.price}
+                gender={item.gender}
+                category={item.category}
+                id={item.id}
+              />
+            );
+          })}
+        {filteredProducts.map((item) => {
           return (
             <ProductItem
               key={item.id}
               img={perfume}
               title={item.title}
               price={item.price}
+              gender={item.gender}
+              category={item.category}
               id={item.id}
             />
           );
