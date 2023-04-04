@@ -1,7 +1,11 @@
 import AvalaibleProduct from "./AvalaibleProducts";
 
 const Products = () => {
-  return <AvalaibleProduct />;
+  return (
+    <div>
+      <AvalaibleProduct />
+    </div>
+  );
 };
 
 export default Products;

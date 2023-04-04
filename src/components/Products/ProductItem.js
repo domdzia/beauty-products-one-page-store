@@ -13,8 +13,11 @@ const ProductItem = (props) => {
       key: props.id,
       title: props.title,
       price: props.price,
+      gender: props.gender,
+      category: props.category,
       amount: amount,
     });
+    console.log(ctx.addItems);
   };
 
   return (
