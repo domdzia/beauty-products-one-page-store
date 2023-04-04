@@ -78,10 +78,6 @@ const AvalaibleProduct = () => {
     setSelectedOption(selectedOptions);
   };
 
-  // const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
-  //   return product.gender === selectedOption;
-  // });
-
   const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
     if (selectedOption === "20") {
       return Number(product.price) < Number(selectedOption);
