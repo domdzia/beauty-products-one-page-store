@@ -20,8 +20,8 @@ function Filter(props) {
           <option value="female">For Women</option>
           <option value="male">For Men</option>
         </Form.Select>
-        <Form.Select className={classes.filter}>
-          <option>Price</option>
+        <Form.Select onChange={valueOptionsHandler} className={classes.filter}>
+          <option value="price">Price</option>
           <option value="20">Under 20$</option>
           <option value="21">Over 20$</option>
         </Form.Select>

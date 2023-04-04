@@ -13,7 +13,7 @@ const DUMMY_PRODUCTS = [
     img: { perfume },
     title: "Fresh Cotton",
     description: "",
-    price: 89.99,
+    price: 2.99,
   },
   {
     id: Math.random(Math.floor * 4),
@@ -78,8 +78,18 @@ const AvalaibleProduct = () => {
     setSelectedOption(selectedOptions);
   };
 
+  // const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
+  //   return product.gender === selectedOption;
+  // });
+
   const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
-    return product.gender === selectedOption;
+    if (selectedOption === "20") {
+      return Number(product.price) < Number(selectedOption);
+    } else if (selectedOption === "21") {
+      return Number(product.price) > Number(selectedOption);
+    } else {
+      return product.gender === selectedOption;
+    }
   });
 
   return (
@@ -88,6 +98,20 @@ const AvalaibleProduct = () => {
       <Filter onFilterHandler={getChoosenOption} />
       <Card>
         {selectedOption === "all" &&
+          DUMMY_PRODUCTS.map((item) => {
+            return (
+              <ProductItem
+                key={item.id}
+                img={perfume}
+                title={item.title}
+                price={item.price}
+                gender={item.gender}
+                category={item.category}
+                id={item.id}
+              />
+            );
+          })}
+        {selectedOption === "price" &&
           DUMMY_PRODUCTS.map((item) => {
             return (
               <ProductItem
