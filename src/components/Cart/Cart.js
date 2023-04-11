@@ -5,6 +5,7 @@ import CartItems from "./CartItems";
 import classes from "./Modal.module.css";
 import { useContext } from "react";
 import CartContext from "../store/cart-context";
+import UserForm from "../Form/UserForm";
 
 const Cart = (props) => {
   const ctx = useContext(CartContext);
@@ -42,18 +43,26 @@ const Cart = (props) => {
         <p>Total Amount</p>
         <span>${totalAmount}</span>
       </div>
+      {props.orderForm && <UserForm />}
       <Modal.Footer>
         <Button
-          className="p-2 w-25"
+          className="p-2 w-15"
           size="lg"
           variant="secondary"
           onClick={props.handleClose}
         >
           Close
         </Button>
-        <Button className="p-2 w-25" size="lg" variant="primary">
-          Order
-        </Button>
+        {!props.orderForm && (
+          <Button
+            className="p-2 w-25"
+            size="lg"
+            variant="primary"
+            onClick={props.handleForm}
+          >
+            Order
+          </Button>
+        )}
       </Modal.Footer>
     </ModalCart>
   );
