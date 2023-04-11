@@ -1,0 +1,5 @@
+.invalid {
+  border: red;
+  background-color: rgba(255, 0, 0, 0.344);
+  opacity: 0.7;
+}
