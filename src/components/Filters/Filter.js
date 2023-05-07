@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Filter.module.css";
 import Form from "react-bootstrap/Form";
 
 function Filter(props) {
-  const [selectValue, setSelectValue] = useState("");
+  const [genderValue, setGenderValue] = useState("");
+  const [priceValue, setPriceValue] = useState("");
 
   const valueOptionsHandler = (e) => {
-    setSelectValue(e.target.value);
+    setGenderValue(e.target.value);
   };
 
-  props.onFilterHandler(selectValue);
+  const priceOptionsHandler = (e) => {
+    setPriceValue(e.target.value);
+  };
+
+  useEffect(() => {
+    props.onGenderHandler(genderValue);
+  }, [genderValue, props]);
+
+  useEffect(() => {
+    props.onPriceHandler(priceValue);
+  }, [priceValue, props]);
 
   return (
     <React.Fragment>
@@ -20,7 +31,7 @@ function Filter(props) {
           <option value="female">For Women</option>
           <option value="male">For Men</option>
         </Form.Select>
-        <Form.Select onChange={valueOptionsHandler} className={classes.filter}>
+        <Form.Select onChange={priceOptionsHandler} className={classes.filter}>
           <option value="price">Price</option>
           <option value="20">Under 20$</option>
           <option value="21">Over 20$</option>

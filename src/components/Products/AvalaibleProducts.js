@@ -72,69 +72,77 @@ const DUMMY_PRODUCTS = [
 ];
 
 const AvalaibleProduct = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState("");
 
-  const getChoosenOption = (selectedOptions) => {
-    setSelectedOption(selectedOptions);
+  const getChoosenGender = (gender) => {
+    setSelectedGender(gender);
   };
 
+  const getChoosenPrice = (price) => {
+    setSelectedPrice(price);
+  };
+
+  const truthyValue = selectedGender === "all" && selectedPrice === "price";
+
   const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
-    if (selectedOption === "20") {
-      return Number(product.price) < Number(selectedOption);
-    } else if (selectedOption === "21") {
-      return Number(product.price) > Number(selectedOption);
-    } else {
-      return product.gender === selectedOption;
+    if (
+      (!selectedPrice && !selectedGender) ||
+      (selectedGender === "all" && !selectedPrice) ||
+      (!selectedGender && selectedPrice === "price") ||
+      truthyValue
+    ) {
+      return true;
+    } else if (
+      selectedGender !== "all" &&
+      selectedGender !== "" &&
+      !selectedPrice
+    ) {
+      return product.gender === selectedGender;
+    } else if (!selectedGender && selectedPrice === "20") {
+      return Number(product.price) < Number(selectedPrice);
+    } else if (!selectedGender && selectedPrice === "21") {
+      return Number(product.price) > Number(selectedPrice);
+    } else if (
+      selectedGender !== "all" &&
+      selectedGender !== "" &&
+      selectedPrice === "20"
+    ) {
+      return (
+        Number(product.price) < Number(selectedPrice) &&
+        product.gender === selectedGender
+      );
+    } else if (
+      selectedGender !== "all" &&
+      !selectedGender !== "" &&
+      selectedPrice === "21"
+    ) {
+      return (
+        Number(product.price) > Number(selectedPrice) &&
+        product.gender === selectedGender
+      );
+    } else if (
+      selectedGender !== "all" &&
+      !selectedGender !== "" &&
+      selectedPrice === "price"
+    ) {
+      return product.gender === selectedGender;
+    } else if (selectedGender === "all" && selectedPrice === "20") {
+      return Number(product.price) < Number(selectedPrice);
+    } else if (selectedGender === "all" && selectedPrice === "21") {
+      return Number(product.price) > Number(selectedPrice);
     }
   });
 
   return (
     <React.Fragment>
       <h2 className={classes["container-title"]}>Our Products</h2>
-      <Filter onFilterHandler={getChoosenOption} />
+      <Filter
+        onGenderHandler={getChoosenGender}
+        onPriceHandler={getChoosenPrice}
+      />
+
       <Card>
-        {selectedOption === "all" &&
-          DUMMY_PRODUCTS.map((item) => {
-            return (
-              <ProductItem
-                key={item.id}
-                img={perfume}
-                title={item.title}
-                price={item.price}
-                gender={item.gender}
-                category={item.category}
-                id={item.id}
-              />
-            );
-          })}
-        {selectedOption === "price" &&
-          DUMMY_PRODUCTS.map((item) => {
-            return (
-              <ProductItem
-                key={item.id}
-                img={perfume}
-                title={item.title}
-                price={item.price}
-                gender={item.gender}
-                category={item.category}
-                id={item.id}
-              />
-            );
-          })}
-        {!selectedOption &&
-          DUMMY_PRODUCTS.map((item) => {
-            return (
-              <ProductItem
-                key={item.id}
-                img={perfume}
-                title={item.title}
-                price={item.price}
-                gender={item.gender}
-                category={item.category}
-                id={item.id}
-              />
-            );
-          })}
         {filteredProducts.map((item) => {
           return (
             <ProductItem
