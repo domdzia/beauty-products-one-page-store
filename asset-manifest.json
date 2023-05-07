@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/beauty-products-one-page-store/static/css/main.dad8ece7.css",
-    "main.js": "/beauty-products-one-page-store/static/js/main.616f3cda.js",
+    "main.css": "/beauty-products-one-page-store/static/css/main.7a3512e0.css",
+    "main.js": "/beauty-products-one-page-store/static/js/main.791e9f15.js",
     "index.html": "/beauty-products-one-page-store/index.html",
     "static/media/cart.svg": "/beauty-products-one-page-store/static/media/cart.a9e8dcd6c8d4fbc7521fa8a526ae9212.svg",
-    "main.dad8ece7.css.map": "/beauty-products-one-page-store/static/css/main.dad8ece7.css.map",
-    "main.616f3cda.js.map": "/beauty-products-one-page-store/static/js/main.616f3cda.js.map"
+    "main.7a3512e0.css.map": "/beauty-products-one-page-store/static/css/main.7a3512e0.css.map",
+    "main.791e9f15.js.map": "/beauty-products-one-page-store/static/js/main.791e9f15.js.map"
   },
   "entrypoints": [
-    "static/css/main.dad8ece7.css",
-    "static/js/main.616f3cda.js"
+    "static/css/main.7a3512e0.css",
+    "static/js/main.791e9f15.js"
   ]
 }
