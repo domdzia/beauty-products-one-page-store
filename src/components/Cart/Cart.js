@@ -34,37 +34,34 @@ const Cart = (props) => {
   });
 
   return (
-    <ModalCart show={props.show} handleClose={props.handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Your Order</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>{showInfoItem}</Modal.Body>
-      <div className={classes.wrapper}>
-        <p>Total Amount</p>
-        <span>${totalAmount}</span>
-      </div>
-      {props.orderForm && <UserForm />}
-      <Modal.Footer>
-        <Button
-          className="p-2 w-15"
-          size="lg"
-          variant="secondary"
-          onClick={props.handleClose}
-        >
-          Close
-        </Button>
-        {!props.orderForm && (
+    <div>
+      <ModalCart show={props.show} handleClose={props.handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Your Order</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{showInfoItem}</Modal.Body>
+        <div className={classes.wrapper}>
+          <p>Total Amount:</p>
+          <span>${totalAmount}</span>
+        </div>
+        {props.orderForm && <UserForm />}
+        <Modal.Footer>
           <Button
-            className="p-2 w-25"
+            className="p-2 w-15"
             size="lg"
-            variant="primary"
-            onClick={props.handleForm}
+            variant="secondary"
+            onClick={props.handleClose}
           >
-            Order
+            Close
           </Button>
-        )}
-      </Modal.Footer>
-    </ModalCart>
+          {!props.orderForm && (
+            <Button size="lg" variant="primary" onClick={props.handleForm}>
+              Order
+            </Button>
+          )}
+        </Modal.Footer>
+      </ModalCart>
+    </div>
   );
 };
 

@@ -17,20 +17,19 @@ const ProductItem = (props) => {
       category: props.category,
       amount: amount,
     });
-    console.log(ctx.addItems);
   };
 
   return (
     <div>
       <Card
         className={classes["my-card"]}
-        style={{ width: "18rem", cursor: "pointer" }}
+        style={{ width: "13rem", cursor: "pointer" }}
       >
         <Card.Img variant="top" src={props.img} alt="img" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>
-            <span>{props.price}</span>
+            <span>${props.price}</span>
           </Card.Text>
           <ProductFormItem
             amountValue={enteredProduct}

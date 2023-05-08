@@ -80,76 +80,82 @@ const UserForm = () => {
   const changeClassCity = invalidCityInput ? styles.invalid : styles.valid;
 
   return (
-    <Form className="p-3">
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          className={changeClass}
-          onChange={getInputNameValue}
-          type="text"
-          value={nameInputValue}
-          onBlur={onBlurNameHandler}
-          onFocus={onFocusNameHandler}
-          placeholder={!invalidNameInput ? "Enter name" : undefined}
-        />
-        {invalidNameInput && (
-          <Form.Text className="text-danger">Please enter your name</Form.Text>
-        )}
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Adress</Form.Label>
-        <Form.Control
-          className={changeClassAdress}
-          type="adress"
-          value={adressInputValue}
-          onChange={getInputAdressValue}
-          onBlur={onBlurAdressHandler}
-          onFocus={onFocusAdressHandler}
-          placeholder={!invalidAdressInput ? "Adress" : undefined}
-        />
-        {invalidAdressInput && (
-          <Form.Text className="text-danger">
-            Please enter your adress
-          </Form.Text>
-        )}
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Postal Code(without -)</Form.Label>
-        <Form.Control
-          className={changeClassCode}
-          type="number"
-          value={codeInputValue}
-          onChange={getInputCodeValue}
-          onBlur={onBlurCodeHandler}
-          onFocus={onFocusCodeHandler}
-          placeholder={!invalidCodeInput ? "Postal Code" : undefined}
-        />
-        {invalidCodeInput && (
-          <Form.Text className="text-danger">
-            Please enter your postal code(without -)
-          </Form.Text>
-        )}
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>City</Form.Label>
-        <Form.Control
-          className={changeClassCity}
-          type="city"
-          value={cityInputValue}
-          onChange={getInputCityValue}
-          onBlur={onBlurCityHandler}
-          onFocus={onFocusCityHandler}
-          placeholder={!invalidCityInput ? "City" : undefined}
-        />
-        {invalidCityInput && (
-          <Form.Text className="text-danger">Please enter your city</Form.Text>
-        )}
-      </Form.Group>
-      <Button onClick={submitOrder} variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <div>
+      <Form className="p-3">
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            className={changeClass}
+            onChange={getInputNameValue}
+            type="text"
+            value={nameInputValue}
+            onBlur={onBlurNameHandler}
+            onFocus={onFocusNameHandler}
+            placeholder={!invalidNameInput ? "Enter name" : undefined}
+          />
+          {invalidNameInput && (
+            <Form.Text className="text-danger">
+              Please enter your name
+            </Form.Text>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Adress</Form.Label>
+          <Form.Control
+            className={changeClassAdress}
+            type="adress"
+            value={adressInputValue}
+            onChange={getInputAdressValue}
+            onBlur={onBlurAdressHandler}
+            onFocus={onFocusAdressHandler}
+            placeholder={!invalidAdressInput ? "Adress" : undefined}
+          />
+          {invalidAdressInput && (
+            <Form.Text className="text-danger">
+              Please enter your adress
+            </Form.Text>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Postal Code(without -)</Form.Label>
+          <Form.Control
+            className={changeClassCode}
+            type="number"
+            value={codeInputValue}
+            onChange={getInputCodeValue}
+            onBlur={onBlurCodeHandler}
+            onFocus={onFocusCodeHandler}
+            placeholder={!invalidCodeInput ? "Postal Code" : undefined}
+          />
+          {invalidCodeInput && (
+            <Form.Text className="text-danger">
+              Please enter your postal code(without -)
+            </Form.Text>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>City</Form.Label>
+          <Form.Control
+            className={changeClassCity}
+            type="city"
+            value={cityInputValue}
+            onChange={getInputCityValue}
+            onBlur={onBlurCityHandler}
+            onFocus={onFocusCityHandler}
+            placeholder={!invalidCityInput ? "City" : undefined}
+          />
+          {invalidCityInput && (
+            <Form.Text className="text-danger">
+              Please enter your city
+            </Form.Text>
+          )}
+        </Form.Group>
+        <Button onClick={submitOrder} variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+      {/* {props.valueOrder && <p className={styles.text}>Thanks for ordering!</p>} */}
+    </div>
   );
 };
-
 export default UserForm;

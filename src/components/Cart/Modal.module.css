@@ -8,7 +8,22 @@
 .wrapper {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   font-size: 2rem;
   gap: 1rem;
   padding-right: 40px;
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .product {
+    flex-direction: column;
+    padding-bottom: 10px;
+    justify-content: center;
+  }
 }
